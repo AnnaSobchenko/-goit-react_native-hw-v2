@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import LoginScreen from './Screens/LoginScreen';
 import RegistartionScreen from './Screens/RegistrationScreen';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
       {/* <Text>goit-react_native-hw-v2</Text> */}
       <StatusBar style="auto" />
       <RegistartionScreen />
+      {/* <LoginScreen /> */}
     </View>
   );
 }
@@ -15,8 +17,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

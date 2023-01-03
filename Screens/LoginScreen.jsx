@@ -1,4 +1,3 @@
-import { Ionicons } from "@expo/vector-icons";
 import {
   StyleSheet,
   Text,
@@ -8,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function RegistartionScreen() {
+export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -17,16 +16,9 @@ export default function RegistartionScreen() {
         resizeMode="cover"
       >
         <View style={styles.formReg}>
-          <View style={styles.userImg}>
-            <View style={styles.userPhoto}></View>
-            <TouchableOpacity style={styles.userPhotoAdd}>
-              <Ionicons name="add-circle-outline" size={24} color="#FF6C00" />
-            </TouchableOpacity>
-          </View>
           <View style={styles.regTitle}>
-            <Text style={styles.text}>Registration</Text>
+            <Text style={styles.text}>Login</Text>
           </View>
-          <TextInput style={styles.inputReg} placeholder="Login" />
           <TextInput style={styles.inputReg} placeholder="Email" />
           <TextInput
             style={styles.inputReg}
@@ -34,14 +26,16 @@ export default function RegistartionScreen() {
             placeholder="Password"
           />
           <TouchableOpacity activeOpacity={0.8} style={styles.btnReg}>
-            <Text style={styles.textSignup}>Sign up</Text>
+            <Text style={styles.textSignup}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.singInBtn}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("Registration")}
           >
-            <Text style={styles.singInBtnText}>Уже есть аккаунт? Войти</Text>
+            <Text style={styles.singInBtnText}>
+              Нет аккаунта? Зареєструватися
+            </Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -66,8 +60,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    paddingTop: 90,
-    paddingBottom: 75,
+    paddingTop: 32,
+    paddingBottom: 144,
     alignContent: "center",
   },
   userImg: {
@@ -77,17 +71,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 128,
     top: -60,
-  },
-  userPhoto: {
-    backgroundColor: "#F6F6F6",
-    borderRadius: 16,
-    width: 120,
-    height: 120,
-  },
-  userPhotoAdd: {
-    position: "absolute",
-    right: 0,
-    bottom: 14,
   },
   regTitle: {
     alignItems: "center",
