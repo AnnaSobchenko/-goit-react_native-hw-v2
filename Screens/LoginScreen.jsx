@@ -81,6 +81,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontSize: 30,
+    fontFamily:"Roboto-Medium",    
+    letterSpacing:0.01
   },
 
   inputReg: {

@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,7 +9,18 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+const initialFormValue = {
+  login: "",
+  email: "",
+  password: "",
+};
+
 export default function RegistartionScreen() {
+  const [form, setForm] = useState(initialFormValue);
+  const inputHandler = ( value, text) => {
+    console.log("text :>> ", text);
+    console.log("value", value);
+  };
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -26,12 +38,24 @@ export default function RegistartionScreen() {
           <View style={styles.regTitle}>
             <Text style={styles.text}>Registration</Text>
           </View>
-          <TextInput style={styles.inputReg} placeholder="Login" />
-          <TextInput style={styles.inputReg} placeholder="Email" />
+          <TextInput
+            style={styles.inputReg}
+            placeholder="Login"
+            value={form.login}
+            onChangeText={inputHandler}
+          />
+          <TextInput
+            style={styles.inputReg}
+            placeholder="Email"
+            value={form.email}
+            onChangeText={inputHandler}
+          />
           <TextInput
             style={styles.inputReg}
             secureTextEntry={true}
             placeholder="Password"
+            value={form.password}
+            onChangeText={inputHandler}
           />
           <TouchableOpacity activeOpacity={0.8} style={styles.btnReg}>
             <Text style={styles.textSignup}>Sign up</Text>
@@ -98,6 +122,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontSize: 30,
+    fontFamily:"Roboto-Medium",    
+    letterSpacing:0.01
   },
 
   inputReg: {
