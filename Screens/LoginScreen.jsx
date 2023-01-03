@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -31,7 +31,7 @@ export default function LoginScreen() {
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.singInBtn}
-            onPress={() => navigation.navigate("Registration")}
+            onPress={() => navigation.navigate("RegistrationScreen")}
           >
             <Text style={styles.singInBtnText}>
               Нет аккаунта? Зареєструватися
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontSize: 30,
-    fontFamily:"Roboto-Medium",    
-    letterSpacing:0.01
+    fontFamily: "Roboto-Medium",
+    letterSpacing: 0.01,
   },
 
   inputReg: {

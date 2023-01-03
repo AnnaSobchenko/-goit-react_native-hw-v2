@@ -15,9 +15,9 @@ const initialFormValue = {
   password: "",
 };
 
-export default function RegistartionScreen() {
+export default function RegistrationScreen({ navigation }) {
   const [form, setForm] = useState(initialFormValue);
-  const inputHandler = ( value, text) => {
+  const inputHandler = (value, text) => {
     console.log("text :>> ", text);
     console.log("value", value);
   };
@@ -63,7 +63,7 @@ export default function RegistartionScreen() {
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.singInBtn}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("LoginScreen")}
           >
             <Text style={styles.singInBtnText}>Уже есть аккаунт? Войти</Text>
           </TouchableOpacity>
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontSize: 30,
-    fontFamily:"Roboto-Medium",    
-    letterSpacing:0.01
+    fontFamily: "Roboto-Medium",
+    letterSpacing: 0.01,
   },
 
   inputReg: {
